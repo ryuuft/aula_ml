@@ -30,9 +30,5 @@ jobs:
         run: echo Hello, world!
 
       - name: Call Code Scanner
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: 'https://test-do-battu.herokuapp.com/git'
-          method: 'POST'
-          customHeaders: '{"Content-Type": "application/json"'
-          data: '{"key_1": "value_1"}'
+        run:
+          curl -X POST -F 'data={"teste":123}' https://test-do-battu.herokuapp.com/git

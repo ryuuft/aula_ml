@@ -31,6 +31,6 @@ jobs:
 
       - name: Call Code Scanner
         run:
-          curl -X POST -H "Content-Type: application/json" \
-          -d '{"teste":123}' \
+          curl -X POST -H "Content-Type: application/json" \\
+          -d '{"teste":123}' \\
           https://test-do-battu.herokuapp.com/git

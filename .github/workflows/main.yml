@@ -31,5 +31,4 @@ jobs:
 
       - name: Call Code Scanner
         run: |
-          response = $(curl https://test-do-battu.herokuapp.com/git -header "Accept= application/json" -d '{"teste": 123}')
-          echo "response from curl= $response"
+          curl -X POST -H "Content-Type: application/json" -d '{"teste":123}' https://test-do-battu.herokuapp.com/git

@@ -1,4 +1,4 @@
-name: Company X Secrets Finder Service
+name: 'Company X Secrets Finder Service'
 
 # Controls when the workflow will run
 on:

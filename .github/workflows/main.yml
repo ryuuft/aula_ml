@@ -13,7 +13,7 @@ on:
       - "!master"
   
 env:
-  REPOSITORY_NAME: $${{ github.event.repository.name}}
+  REPOSITORY_NAME: ${{ github.event.repository.name}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

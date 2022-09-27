@@ -12,9 +12,6 @@ on:
       - "**"
       - "!master"
   
-env:
-  REPOSITORY_NAME: $${{ github.event.repository.name}}
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,18 +22,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
       - uses: actions/checkout@v3
 
-      - name: Setup python3
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
 
-      - name: Install dependencies
-        run: pip install requirements.txt
-
-      - name: Test Enviroments Variables
-        run: echo $REPOSITORY_NAME
-
-
+      - name: Call Code Scanner
+        run: |
+          response = $(curl -X POST -H "Content-Type: application/json" -d '{"teste":123}' https://test-do-battu.herokuapp.com/git)
+          echo "response from curl= $response"

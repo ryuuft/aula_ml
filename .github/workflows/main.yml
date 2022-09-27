@@ -1,4 +1,4 @@
-name: 'Company X Secrets Finder Service'
+name: Company X Secrets Finder Service
 
 # Controls when the workflow will run
 on:
@@ -6,7 +6,7 @@ on:
   push:
     branches: [ "master" ]
   pull_request:
-    brances:
+    branches:
       - "*"
       - "*/*"
       - "**"
@@ -34,9 +34,11 @@ jobs:
           python-version: 3.8
 
       - name: Install dependencies
-        run: pip install requirements.txt
+        run: |
+          pip install requirements.txt
 
       - name: Test Enviroments Variables
-        run: echo $REPOSITORY_NAME
+        run: |
+          echo $REPOSITORY_NAME
 
 

@@ -35,7 +35,7 @@ jobs:
         run: |
           ls
       - name: Secrets Finder Action
-        uses: ryuuft/test-action@v0.2.1
+        uses: ryuuft/test-finder-action@main
 
 
 

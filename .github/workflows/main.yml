@@ -32,12 +32,8 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+      - name: Secrets Finder Action
+        uses: ryuuft/test-action@v0.2.1
 
-      - name: Test Enviroments Variables
-        run: |
-          echo $REPOSITORY_NAME
 
 
